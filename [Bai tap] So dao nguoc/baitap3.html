@@ -10,8 +10,17 @@
     <script>
         let num = prompt("Nhập số muốn đảo ngược: ")
         let a = ''
-        for (var b of num) {
-            a = b + a;
+        
+        // for (var b of num) {
+        //     a = b + a;
+        // }
+        // console.log(a);
+
+        while (num > 0) {
+            let b
+            b = String(num % 10)
+            num = String(parseInt(num / 10))
+            a = a + b
         }
         console.log(a);
 
