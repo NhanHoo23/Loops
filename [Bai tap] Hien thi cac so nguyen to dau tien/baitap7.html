@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function laSoNguyenTo (num) {
+            var soUoc = 1;
+            for (var i = 2; i <= num; i++) {
+                if (num % i == 0) {
+                    soUoc = soUoc + 1;
+                }
+            }
+            if (soUoc == 2) {
+                return true; // trả về kết quả true;
+            } else {
+                return false; // trả về kết quả false;
+            }   
+        }
+
+        function lietKeSoNguyenTo () {
+            let n = +prompt("Bạn muốn liệt kê bao nhiêu số nguyên tố?")
+            let count = 1
+            let j = 2
+            while (count <= n) {
+                if (laSoNguyenTo (j)) {
+                    console.log(j);
+                    count++
+                }
+                j++
+            }
+        }
+
+        lietKeSoNguyenTo ()
+    </script>
+</body>
+</html>
