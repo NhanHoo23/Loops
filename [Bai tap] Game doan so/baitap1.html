@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="guessNumber()">Chơi</button>
+    <script>
+        function guessNumber() {
+            let maxNumberOfRange = +prompt("Nhập số lớn nhất trong khoảng mà bạn muốn chọn: ")
+            let randomNumber = Math.floor(Math.random() * maxNumberOfRange)
+            let i = 1
+            console.log(randomNumber);
+            let luckyNumber = +prompt(`Nhập số bạn đoán trong khoảng mà bạn vừa chọn (0-${maxNumberOfRange}) `)
+            while (luckyNumber != randomNumber && i <= 3) {
+                if (luckyNumber < randomNumber) {
+                    alert("Số bạn đoán đang nhỏ hơn số cần đoán")
+                    luckyNumber = +prompt(`Nhập số bạn đoán trong khoảng mà bạn vừa chọn (0-${maxNumberOfRange}) `)
+                } else if (luckyNumber > randomNumber) {
+                    alert("Số bạn đoán đang lớn hơn số cần đoán")
+                    luckyNumber = +prompt(`Nhập số bạn đoán trong khoảng mà bạn vừa chọn (0-${maxNumberOfRange}) `)
+                }
+                i++
+            }
+            
+            if (luckyNumber == randomNumber) {
+                document.write("Bạn đã đoán đúng!")
+            } else {
+                document.write("Bạn chỉ được đoán 3 lần!")
+            }
+        }
+
+    </script>
+</body>
+</html>

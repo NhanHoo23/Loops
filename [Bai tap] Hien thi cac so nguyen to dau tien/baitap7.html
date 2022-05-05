@@ -9,16 +9,16 @@
 <body>
     <script>
         function laSoNguyenTo (num) {
-            var soUoc = 1;
-            for (var i = 2; i <= num; i++) {
+            let soUoc = 1;
+            for (let i = 2; i <= num; i++) {
                 if (num % i == 0) {
                     soUoc = soUoc + 1;
                 }
             }
             if (soUoc == 2) {
-                return true; // trả về kết quả true;
+                return true; 
             } else {
-                return false; // trả về kết quả false;
+                return false; 
             }   
         }
 
@@ -34,6 +34,17 @@
                 j++
             }
         }
+
+        // cách khác để kiểm tra số nguyên tố
+        // if (num < 2) {
+        //     return false
+        // }
+        // for (let i = 2; i <= parseInt(Math.sqrt(num)); i++) {
+        //     if (num % i == 0) {
+        //         return false
+        //     } 
+        // }
+        // return true
 
         lietKeSoNguyenTo ()
     </script>
